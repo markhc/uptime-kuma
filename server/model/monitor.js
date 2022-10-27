@@ -78,6 +78,7 @@ class Monitor extends BeanModel {
             active: this.active,
             type: this.type,
             interval: this.interval,
+            timeout: this.timeout,
             retryInterval: this.retryInterval,
             resendInterval: this.resendInterval,
             keyword: this.keyword,
@@ -256,7 +257,7 @@ class Monitor extends BeanModel {
                         url: this.url,
                         method: (this.method || "get").toLowerCase(),
                         ...(this.body ? { data: JSON.parse(this.body) } : {}),
-                        timeout: this.interval * 1000 * 0.8,
+                        timeout: this.timeout * 1000,
                         headers: {
                             "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9",
                             "User-Agent": "Uptime-Kuma/" + version,
@@ -450,7 +451,7 @@ class Monitor extends BeanModel {
                     }
 
                     let res = await axios.get(steamApiUrl, {
-                        timeout: this.interval * 1000 * 0.8,
+                        timeout: this.timeout * 1000,
                         headers: {
                             "Accept": "*/*",
                             "User-Agent": "Uptime-Kuma/" + version,

@@ -259,6 +259,12 @@
                                 <input id="interval" v-model="monitor.interval" type="number" class="form-control" required min="20" step="1">
                             </div>
 
+                            <!-- Timeout -->
+                            <div class="my-3">
+                                <label for="timeoutPeriod" class="form-label">{{ $t("Timeout") }} (in seconds)</label>
+                                <input id="timeoutPeriod" v-model="monitor.timeout" type="number" class="form-control" required min="1" step="1">
+                            </div>
+
                             <div class="my-3">
                                 <label for="maxRetries" class="form-label">{{ $t("Retries") }}</label>
                                 <input id="maxRetries" v-model="monitor.maxretries" type="number" class="form-control" required min="0" step="1">
@@ -670,6 +676,7 @@ export default {
                     url: "https://",
                     method: "GET",
                     interval: 60,
+                    timeout: 30,
                     retryInterval: this.interval,
                     resendInterval: 0,
                     maxretries: 0,
