@@ -85,6 +85,8 @@ export default {
     Hostname: "Hostname",
     Port: "Port",
     "Heartbeat Interval": "Heartbeat Interval",
+    Timeout: "Timeout",
+    inSeconds: "in seconds",
     Retries: "Retries",
     "Heartbeat Retry Interval": "Heartbeat Retry Interval",
     "Resend Notification if Down X times consequently": "Resend Notification if Down X times consequently",

@@ -261,7 +261,7 @@
 
                             <!-- Timeout -->
                             <div class="my-3">
-                                <label for="timeoutPeriod" class="form-label">{{ $t("Timeout") }} (in seconds)</label>
+                                <label for="timeoutPeriod" class="form-label">{{ $t("Timeout") }} ({{ $t("inSeconds") }})</label>
                                 <input id="timeoutPeriod" v-model="monitor.timeout" type="number" class="form-control" required min="1" step="1">
                             </div>
 
